@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['appointment_data'] = [
             'name' => $name,
             'date' => $appointment_date,
-            'doctor' => 'Dr. Naresh Trehan'
+            'doctor' => 'Dr. Varnika Upadhat'
         ];
         header("Location: appointment_success.php");
         exit();
