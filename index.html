@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr.Varnika Upadhay </title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        a {
+            text-decoration: none;
+            color: #0066cc;
+        }
+        
+        /* Header Styles */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .logo img {
+            height: 85px;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 25px;
+        }
+        
+        .nav-menu a {
+            color: #333;
+            font-weight: 600;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            background-color: #f5f5f5;
+            padding: 10px 0;
+        }
+        
+        .breadcrumb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .breadcrumb-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .breadcrumb-links li {
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-links li:after {
+            content: '>';
+            margin-left: 10px;
+            color: #999;
+        }
+        
+        .breadcrumb-links li:last-child:after {
+            content: '';
+        }
+        
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        /* Doctor Profile Section */
+        .doctor-profile {
+            flex: 0 0 70%;
+            padding-right: 30px;
+        }
+        
+        .profile-header {
+            display: flex;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .doctor-image {
+            flex: 0 0 200px;
+            margin-right: 30px;
+        }
+        
+        .doctor-image img {
+            width: 100%;
+            border-radius: 5px;
+        }
+        
+        .doctor-info {
+            flex: 1;
+        }
+        
+        .doctor-name {
+            font-size: 28px;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        
+        .doctor-designation {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .doctor-department {
+            display: inline-block;
+            background-color: #f0f7ff;
+            color: #0066cc;
+            padding: 5px 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        
+        .doctor-experience {
+            margin-bottom: 15px;
+        }
+        
+        .doctor-experience span {
+            font-weight: bold;
+        }
+        
+        .profile-content {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            color: #0066cc;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            flex: 0 0 30%;
+        }
+        
+        .appointment-box {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .appointment-title {
+            font-size: 20px;
+            color: #0066cc;
+            margin-bottom: 15px;
+        }
+        
+        .appointment-form input,
+        .appointment-form select,
+        .appointment-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .appointment-form button {
+            background-color: #0066cc;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        
+        .appointment-form button:hover {
+            background-color: #0055aa;
+        }
+        
+        .hospital-info {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        
+        .hospital-name {
+            font-size: 18px;
+            color: #0066cc;
+            margin-bottom: 10px;
+        }
+        
+        .hospital-address {
+            margin-bottom: 15px;
+            color: #666;
+        }
+        
+        .hospital-contact {
+            margin-bottom: 5px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .footer-column {
+            flex: 0 0 23%;
+            margin-bottom: 20px;
+        }
+        
+        .footer-title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+        }
+        
+        .footer-links a:hover {
+            color: #fff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            margin-top: 20px;
+            color: #aaa;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+            }
+            
+            .doctor-image {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .doctor-profile,
+            .sidebar {
+                flex: 0 0 100%;
+                padding-right: 0;
+            }
+            
+            .sidebar {
+                margin-top: 30px;
+            }
+            
+            .footer-column {
+                flex: 0 0 48%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <img src="medanta-logo.jpg" alt="Medanta Logo">
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#">Hospitals</a></li>
+                <li><a href="#">Specialities</a></li>
+                <li><a href="#">Doctors</a></li>
+                <li><a href="#">Patients & Visitors</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    
+ 
+    
+    <!-- Main Content -->
+    <div class="main-container">
+        <!-- Doctor Profile -->
+        <div class="doctor-profile">
+            <div class="profile-header">
+                <div class="doctor-image">
+                    <img src="doctor-image.jpg" alt="Dr. Varnika Upadhay">
+                </div>
+                <div class="doctor-info">
+                    <h1 class="doctor-name">Dr. Varnika Upadhay</h1>
+                    <p class="doctor-designation">Chairman & Managing Director, Cardiac Surgeon</p>
+                    <span class="doctor-department">Cardiology</span>
+                    <p class="doctor-experience"><span>Experience:</span> 40+ Years</p>
+                    <p class="doctor-qualification"><span>Qualification:</span> MBBS, MS (General Surgery)</p>
+                </div>
+            </div>
+            
+            <div class="profile-content">
+                <h2 class="section-title">About Dr. Varnika Upadhay</h2>
+                <p>Dr. Varnika Upadhay is a renowned Cardiac Surgeon with over 40 years of experience. /p>
+                
+                <h2 class="section-title">Specialization</h2>
+                <ul>
+                    <li>Coronary Artery Bypass Surgery</li>
+                    <li>Minimally Invasive Cardiac Surgery</li>
+                    <li>Valve Repair and Replacement</li>
+                    <li>Aortic Aneurysm Surgery</li>
+                    <li>Heart Failure Surgery</li>
+                </ul>
+                
+                <h2 class="section-title">Education & Training</h2>
+                <ul>
+                    <li>MBBS - King George's Medical College, Lucknow</li>
+                    <li>MS (General Surgery) - King George's Medical College, Lucknow</li>
+                    <li>Advanced Training in Cardiothoracic Surgery - New York University Medical Center, USA</li>
+                </ul>
+                
+                <h2 class="section-title">Awards & Recognitions</h2>
+                <ul>
+                    <li>Sample Award 1</li>
+                    <li>Sample Award 2</li>
+                    <li>Sample Award 3</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="appointment-box">
+                <h3 class="appointment-title">Book an Appointment</h3>
+                <form class="appointment-form" action="book_appointment.php" method="POST">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" name="phone" placeholder="Phone Number" required>
+                    <select name="appointment_type" required>
+                        <option value="">Select Appointment Type</option>
+                        <option value="new">New Consultation</option>
+                        <option value="followup">Follow-up</option>
+                    </select>
+                    <input type="date" name="appointment_date" required>
+                    <textarea name="message" placeholder="Any specific requirements"></textarea>
+                    <button type="submit">Book Appointment</button>
+                </form>
+            </div>
+            
+            <div class="hospital-info">
+                <h3 class="hospital-name">XYZ Clinic - Gurugram</h3>
+                <p class="hospital-address"> Gurugram, Haryana 122001</p>
+                <p class="hospital-contact"><strong>Phone:</strong> +91-1234567890</p>
+                <p class="hospital-contact"><strong>Email:</strong> info@varnikaupadhay.org</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h4 class="footer-title">About us</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Leadership</a></li>
+                    <li><a href="#">Quality & Safety</a></li>
+                    <li><a href="#">Awards</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-title">Specialities</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Cardiology</a></li>
+                    <li><a href="#">Oncology</a></li>
+                    <li><a href="#">Neurology</a></li>
+                    <li><a href="#">Transplant</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-title">For Patients</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Find a Doctor</a></li>
+                    <li><a href="#">Book Appointment</a></li>
+                    <li><a href="#">Patient Guide</a></li>
+                    <li><a href="#">International Patients</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-column">
+                <h4 class="footer-title">Contact Us</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Emergency</a></li>
+                </ul>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 DR.VARNIKA UPADHAY - The Medicity. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
